@@ -1,0 +1,163 @@
+﻿id,manufacturer,aircraft_make,aircraft_model,aircraft_variant,full_aircraft_type,category_name,total_seats,cabin_dimensions_height,cabin_dimensions_width,cabin_dimensions_length,baggage_capacity,num_bags,cruise_speed,max_range,fuel_stop_distance,fuel_stop_hours
+46,Bombardier,Learjet,31,A,Learjet 31 A,Light,7,52,60,154,40,6,515,1877,1000,4.5
+7,Beechcraft,Beechjet,400,,Beechjet 400,Light,7,58,59,173,53,8,465,1547,1000,4.5
+8,Beechcraft,Beechjet,400A,,Beechjet 400A,Light,7,57,58,187,53,8,465,1547,1000,4.5
+501,cessna,cessna,414,,cessna 414,Light,6,,,,,3,203,1528,1000,4.5
+490,Cessna,Cessna,Longitude,,Cessna Longitude,Super Midsize,12,72,77,302,112,16,550,3500,3500,6.5
+9,Bombardier,Challenger,300,,Challenger 300,Super Midsize,9,73,86,343,106,15,541,3560,3500,6.5
+10,Bombardier,Challenger,350,,Challenger 350,Super Midsize,9,72,86,284,106,15,541,3560,3500,6.5
+551,Challenger,Challenger,3500,,Challenger 3500,Super Midsize,10,72,86,302,106,,459,3400,3500,6.5
+100,Bombardier,Challenger,600,,Challenger 600,Heavy,9,73,98,340,115,16,497,3912,5500,10
+33,Bombardier,Challenger,601,,Challenger 601,Heavy,9,73,98,340,115,16,487,3784,5500,10
+11,Bombardier,Challenger,604,,Challenger 604,Heavy,9,73,98,341,115,16,459,4000,5500,10
+12,Bombardier,Challenger,605,,Challenger 605,Heavy,9,73,98,341,115,16,541,4598,5500,10
+230,Bombardier,Challenger,606,,Challenger 606,Heavy,9,73,98,341,115,16,497,4598,5500,10
+34,Bombardier,Challenger,650,,Challenger 650,Heavy,11,72,95,307,115,16,541,4643,5500,10
+35,Bombardier,Challenger,850,,Challenger 850,Heavy,14,73,98,581,202,29,509,3390,5500,10
+232,Bombardier,Challenger,850ER,,Challenger 850ER,Heavy,14,73,98,581,202,29,509,3390,5500,10
+42,Cessna,Citation,Bravo,,Citation Bravo,Light,7,55,56,192,73,10,431,1969,1000,4.5
+278,Cessna,Citation,CJ1,+,Citation CJ1 +,Light,5,57,58,132,59,8,307,1290,1000,4.5
+43,Cessna,Citation,CJ2,,Citation CJ2,Light,7,57,57,163,74,11,352,1530,1000,4.5
+146,Cessna,Citation,CJ2,+,Citation CJ2 +,Light,7,57,57,163,74,11,352,1530,1000,4.5
+13,Cessna,Citation,CJ3,,Citation CJ3,Light,7,57,57,169,65,9,416,2002,1000,4.5
+147,Cessna,Citation,CJ3,+,Citation CJ3 +,Light,7,56,58,188,65,9,416,2002,1000,4.5
+45,Cessna,Citation,CJ4,,Citation CJ4,Light,8,57,57,208,77,11,425,2165,1000,4.5
+563,Cessna,Citation,CJ4,Gen2,Citation CJ4 Gen2,Light,10,57,57,208,77,11,425,2165,1000,4.5
+41,Cessna,Citation,Encore,,Citation Encore,Light,7,57,57,207,69,10,372,1600,1000,4.5
+284,Cessna,Citation,Encore,+,Citation Encore +,Light,7,57,58,207,71,10,372,1600,1000,4.5
+44,Cessna,Citation,Excel,,Citation Excel,Midsize,8,67,66,222,79,13,487,1907,2000,6
+37,Cessna,Citation,II,,Citation II,Light,7,57,57,189,77,11,431,1969,1000,4.5
+289,Cessna,Citation,II,SP,Citation II SP,Light,8,56,58,189,77,11,431,1969,1000,4.5
+39,Cessna,Citation,III,,Citation III,Midsize,8,69,68,221,61,7,544,2345,2000,6
+144,Cessna,Citation,Latitude,,Citation Latitude,Super Midsize,8,72,77,261,127,18,513,2700,3500,6.5
+71,Cessna,Citation,S-II,,Citation S-II,Light,7,59,55,192,74,11,431,1969,1000,4.5
+14,Cessna,Citation,Sovereign,,Citation Sovereign,Super Midsize,9,68,66,303,135,19,495,3276,3500,6.5
+295,Cessna,Citation,Sovereign,+,Citation Sovereign +,Super Midsize,9,68,66,303,135,19,495,3276,3500,6.5
+40,Cessna,Citation,Ultra,,Citation Ultra,Light,8,57,57,207,69,10,449,2268,1000,4.5
+38,Cessna,Citation,V,,Citation V,Light,7,56,57,212,77,10,449,2072,1000,4.5
+89,Cessna,Citation,VI,,Citation VI,Midsize,7,67,68,221,61,7,544,2702,2000,6
+90,Cessna,Citation,VII,,Citation VII,Midsize,8,69,68,221,54,7,547,2062,2000,6
+299,Cessna,Citation,X,+,Citation X +,Super Midsize,8,68,66,287,82,15,604,3701,3500,6.5
+15,Cessna,Citation,X,,Citation X,Super Midsize,8,68,66,302,82,15,604,3701,3500,6.5
+16,Cessna,Citation,XL,,Citation XL,Midsize,8,67,66,222,79,13,487,1981,2000,6
+301,Cessna,Citation,XLS,+,Citation XLS +,Midsize,8,68,66,222,90,13,487,2138,2000,6
+145,Cessna,Citation,XLS,,Citation XLS,Midsize,8,67,66,222,79,13,487,2138,2000,6
+303,Dassault,Falcon,10,,Falcon 10,Light,5,59,58,152,41,6,454,1763,1000,4.5
+91,Dassault,Falcon,20,,Falcon 20,Midsize,10,65,67,293,41,6,399,2475,2000,6
+305,Dassault,Falcon,20,5,Falcon 20 5,Midsize,7,68,73,293,60,6,399,2475,2000,6
+306,Dassault,Falcon,20,BR,Falcon 20 BR,Midsize,9,68,73,293,60,6,399,2475,2000,6
+307,Dassault,Falcon,20,F,Falcon 20 F,Midsize,9,68,73,293,60,6,399,2475,2000,6
+308,Dassault,Falcon,20,F-5,Falcon 20 F-5,Midsize,9,68,73,293,60,6,399,2475,2000,6
+309,Dassault,Falcon,200,,Falcon 200,Midsize,6,68,73,293,41,6,399,2475,2000,6
+17,Dassault,Falcon,2000,,Falcon 2000,Heavy,10,74,92,312,131,19,459,3602,5500,10
+310,Dassault,Falcon,2000,DX,Falcon 2000 DX,Heavy,10,74,92,374,131,19,459,3602,5500,10
+103,Dassault,Falcon,2000,EX,Falcon 2000 EX,Heavy,13,74,92,312,131,19,459,3602,5500,10
+51,Dassault,Falcon,2000,EX EASy,Falcon 2000 EX EASy,Heavy,9,74,92,312,131,19,459,3602,5500,10
+155,Dassault,Falcon,2000,LX,Falcon 2000 LX,Heavy,13,74,92,312,131,19,459,3602,5500,10
+156,Dassault,Falcon,2000,LXS,Falcon 2000 LXS,Heavy,13,74,92,312,131,19,459,3602,5500,10
+157,Dassault,Falcon,2000,S,Falcon 2000 S,Heavy,13,74,92,312,131,19,459,3602,5500,10
+99,Dassault,Falcon,50,EX,Falcon 50 EX,Super Midsize,10,70,73,282,115,,480,3230,3500,6.5
+556,Dassault,Falcon,6X,,Falcon 6X,Ultra Long Range,14,78,102,484,155,22,566,5500,7500,15.4
+19,Dassault,Falcon,7X,,Falcon 7X,Ultra Long Range,16,74,92,469,140,20,559,6732,7500,15.4
+317,Dassault,Falcon,7X,EASy,Falcon 7X EASy,Ultra Long Range,12,74,92,469,140,20,559,6732,7500,15.4
+318,Dassault,Falcon,7X,EASy II,Falcon 7X EASy II,Ultra Long Range,,74,92,469,140,20,559,6732,7500,15.4
+319,Dassault,Falcon,8X,,Falcon 8X,Ultra Long Range,14,74,92,512,140,19,488,6450,7500,15.4
+18,Dassault,Falcon,900,,Falcon 900,Heavy,14,74,92,398,127,18,459,4428,5500,10
+149,Dassault,Falcon,900,B,Falcon 900 B,Heavy,14,74,92,398,127,18,459,4428,5500,10
+150,Dassault,Falcon,900,C,Falcon 900 C,Heavy,14,74,92,398,127,18,459,4428,5500,10
+151,Dassault,Falcon,900,DX,Falcon 900 DX,Heavy,12,74,92,398,127,18,459,4428,5500,10
+154,Dassault,Falcon,900,DX EASy,Falcon 900 DX EASy,Heavy,12,74,92,398,127,18,459,4428,5500,10
+102,Dassault,Falcon,900,EX,Falcon 900 EX,Heavy,12,74,92,398,127,18,459,4428,5500,10
+104,Dassault,Falcon,900,EX EASy,Falcon 900 EX EASy,Heavy,17,74,92,398,127,18,459,4428,5500,10
+326,Dassault,Falcon,900,EX EASy II,Falcon 900 EX EASy II,Heavy,14,74,92,398,127,18,459,4428,5500,10
+153,Dassault,Falcon,900,LX,Falcon 900 LX,Heavy,12,74,92,398,127,18,459,4428,5500,10
+328,Dassault,Falcon,900,LX EASy,Falcon 900 LX EASy,Heavy,14,74,92,398,127,18,459,4428,5500,10
+21,Bombardier,Global,5000,,Global 5000,Ultra Long Range,12,75,98,510,195,28,562,5984,7500,15.4
+561,Bombardier,Global,5500,,Global 5500,Ultra Long Range,,74,95,489,195,,487,5900,7500,15.4
+22,Bombardier,Global,6000,,Global 6000,Ultra Long Range,14,75,98,580,195,28,564,6822,7500,15.4
+502,Bombardier,Global,6500,,Global 6500,Ultra Long Range,15,74,95,519,195,28,516,6600,7500,15.4
+134,Bombardier,Global,7000,,Global 7000,Ultra Long Range,14,75,98,655,195,28,516,7400,7500,15.4
+448,Bombardier,Global,7500,,Global 7500,Ultra Long Range,16,74,96,653,195,28,593,7700,7500,15.4
+20,Bombardier,Global,Express,XRS,Global Express XRS,Ultra Long Range,14,75,98,580,195,26,488,6390,7500,15.4
+52,Bombardier,Global,Express,,Global Express,Ultra Long Range,13,75,98,580,190,26,488,6500,7500,15.4
+562,Gulfstream Aerospace,Gulfstream,G,#NAME?,Gulfstream G -IVSP,Heavy,12,73,88,541,169,24,476,4715,5500,10
+53,Gulfstream Aerospace,Gulfstream,G100,,Gulfstream G100,Midsize,8,67,57,205,64,9,529,3749,2000,6
+23,Gulfstream Aerospace,Gulfstream,G150,,Gulfstream G150,Midsize,7,69,69,212,80,11,459,3452,2000,6
+24,Gulfstream Aerospace,Gulfstream,G200,,Gulfstream G200,Super Midsize,9,75,86,294,150,21,528,3915,3500,6.5
+357,Gulfstream Aerospace,Gulfstream,G280,,Gulfstream G280,Super Midsize,9,75,86,387,154,21,528,3915,3500,6.5
+105,Gulfstream Aerospace,Gulfstream,G300,,Gulfstream G300,Heavy,14,73,88,541,169,24,438,3485,5500,10
+106,Gulfstream Aerospace,Gulfstream,G350,,Gulfstream G350,Heavy,14,73,88,541,169,24,528,3680,5500,10
+107,Gulfstream Aerospace,Gulfstream,G400,,Gulfstream G400,Heavy,12,73,88,541,169,24,476,4715,5500,10
+27,Gulfstream Aerospace,Gulfstream,G450,,Gulfstream G450,Heavy,12,74,88,541,169,24,609,4948,5500,10
+549,Gulfstream Aerospace,Gulfstream,G500,(YOM after 2018),Gulfstream G500 (YOM after 2018),Ultra Long Range,14,74,91,498,175,24,560,6100,7500,15.4
+110,Gulfstream Aerospace,Gulfstream,G500,,Gulfstream G500,Ultra Long Range,14,74,88,601,175,24,562,7940,7500,15.4
+28,Gulfstream Aerospace,Gulfstream,G550,,Gulfstream G550,Ultra Long Range,14,74,88,601,226,24,562,7940,7500,15.4
+461,Gulfstream,Gulfstream,G600,,Gulfstream G600,Ultra Long Range,13,74,92,616,175,25,488,6500,7500,15.4
+29,Gulfstream Aerospace,Gulfstream,G650,,Gulfstream G650,Ultra Long Range,14,77,102,643,195,28,594,8050,7500,15.4
+358,Gulfstream Aerospace,Gulfstream,G650,ER,Gulfstream G650 ER,Ultra Long Range,13,77,102,643,195,28,594,8050,7500,15.4
+555,Gulfstream,Gulfstream,G700,,Gulfstream G700,Ultra Long Range,13,75,98,683,195,28,690,7750,7500,15.4
+108,Gulfstream Aerospace,Gulfstream,GIII,,Gulfstream GIII,Heavy,14,73,88,472,169,22,508,4200,5500,10
+1,Gulfstream Aerospace,Gulfstream,GIV,,Gulfstream GIV,Heavy,12,74,88,541,169,24,445,4847,5500,10
+26,Gulfstream Aerospace,Gulfstream,GV,,Gulfstream GV,Ultra Long Range,14,75,88,601,226,32,562,6674,7500,15.4
+361,Hawker Aircraft,Hawker,1000,A,Hawker 1000 A,Super Midsize,8,69,72,293,72,7,540,3565,3500,6.5
+57,Hawker Aircraft,Hawker,1000,,Hawker 1000,Super Midsize,8,69,72,293,72,7,453,3565,3500,6.5
+362,Hawker Aircraft,Hawker,400,,Hawker 400,Light,8,58,59,186,45,8,465,1534,1000,4.5
+30,Hawker Aircraft,Hawker,4000,,Hawker 4000,Super Midsize,9,72,76,300,114,16,624,3775,3500,6.5
+3,Hawker Aircraft,Hawker,400XP,,Hawker 400XP,Light,7,58,59,186,59,8,465,1534,1000,4.5
+92,Hawker Aircraft,Hawker,700,,Hawker 700,Midsize,8,69,72,255,40,6,484,2497,2000,6
+363,Hawker Aircraft,Hawker,700,A,Hawker 700 A,Midsize,6,69,72,255,48,6,484,2497,2000,6
+364,Hawker Aircraft,Hawker,700,B,Hawker 700 B,Midsize,8,69,72,255,48,6,484,2497,2000,6
+93,Hawker Aircraft,Hawker,750,XP,Hawker 750 XP,Midsize,8,69,72,255,72,6,484,2497,2000,6
+94,Hawker Aircraft,Hawker,800,,Hawker 800,Midsize,8,69,72,255,50,7,430,2540,2000,6
+54,Hawker Aircraft,Hawker,800,A,Hawker 800 A,Midsize,8,69,72,255,50,7,430,2540,2000,6
+367,Hawker Aircraft,Hawker,800,B,Hawker 800 B,Midsize,7,69,72,255,50,7,430,2540,2000,6
+2,Hawker Aircraft,Hawker,800,XP,Hawker 800 XP,Midsize,8,69,72,255,50,7,430,2540,2000,6
+368,Hawker Aircraft,Hawker,800,XPi,Hawker 800 XPi,Midsize,8,69,72,255,50,7,430,2540,2000,6
+56,Hawker Aircraft,Hawker,850,XP,Hawker 850 XP,Midsize,8,69,72,255,50,7,430,2540,2000,6
+64,Hawker Aircraft,Hawker,900,XP,Hawker 900 XP,Midsize,8,69,72,255,50,7,493,3239,2000,6
+237,Bombardier,Learjet,25,B,Learjet 25 B,Light,8,52,59,144,40,6,443,895,1000,4.5
+73,Bombardier,Learjet,31,,Learjet 31,Light,8,52,59,153,40,6,515,1877,1000,4.5
+239,Bombardier,Learjet,31,ER,Learjet 31 ER,Light,7,52,59,155,30,6,515,1877,1000,4.5
+74,Bombardier,Learjet,35,,Learjet 35,Light,8,52,59,153,40,6,436,3290,1000,4.5
+47,Bombardier,Learjet,35,A,Learjet 35 A,Light,7,52,58,154,40,6,436,3290,1000,4.5
+48,Bombardier,Learjet,40,,Learjet 40,Light,6,59,61,212,65,9,529,1860,1000,4.5
+75,Bombardier,Learjet,40,XR,Learjet 40 XR,Light,6,59,61,212,65,9,529,1860,1000,4.5
+32,Bombardier,Learjet,45,,Learjet 45,Super Light,8,59,61,238,65,9,500,1968,1044,3.1
+76,Bombardier,Learjet,45,XR,Learjet 45 XR,Super Light,8,59,61,236,65,9,500,1968,1044,3.1
+95,Bombardier,Learjet,55,,Learjet 55,Midsize,8,68,71,165,59,9,462,2346,2000,6
+245,Bombardier,Learjet,55,C,Learjet 55 C,Midsize,0,69,71,165,60,9,462,2346,2000,6
+31,Bombardier,Learjet,60,,Learjet 60,Midsize,7,68,71,212,48,8,483,2405,2000,6
+49,Bombardier,Learjet,60,XR,Learjet 60 XR,Midsize,8,68,71,212,48,8,483,2405,2000,6
+248,Bombardier,Learjet,60,XRS,Learjet 60 XRS,Midsize,7,69,71,212,48,8,483,2405,2000,6
+249,Bombardier,Learjet,70,,Learjet 70,Super Light,6,59,61,212,65,7,535,2347,1044,3.1
+96,Bombardier,Learjet,75,,Learjet 75,Super Light,7,57,61,212,65,7,535,2347,1044,3.1
+342,Embraer,Legacy,450,,Legacy 450,Super Midsize,8,72,82,288,177,26,536,2904,3500,6.5
+65,Embraer,Legacy,500,,Legacy 500,Super Midsize,9,72,82,330,155,26,536,2904,3500,6.5
+66,Embraer,Legacy,600,,Legacy 600,Heavy,13,72,83,598,286,34,518,3429,5500,10
+77,Nextant Aerospace,Nextant,400XT,,Nextant 400XT,Light,7,57,59,186,56,8,447,1801,1000,4.5
+142,Nextant Aerospace,Nextant,400XTi,,Nextant 400XTi,Light,7,57,59,186,56,8,447,1801,1000,4.5
+467,Embraer,Phenom,300,E,Phenom 300 E,Super Light,8,59,61,206,85,12,521,2268,1044,3.1
+62,Embraer,Phenom,300,,Phenom 300,Super Light,6,59,61,206,79,12,521,2268,1044,3.1
+445,Pilatus,Pilatus,PC-24,,Pilatus PC-24,Super Light,8,61,67,276,90,6,506,1724,1044,3.1
+578,"Canadair, Ltd.",CHALLENGER,601-1A,,CHALLENGER 601-1A,Heavy,,73,98,339,132,26,442,3450,5500,10
+579,"Canadair, Ltd.",CHALLENGER,601-3A,,CHALLENGER 601-3A,Heavy,,73,98,340,132,26,476,3000,5500,10
+585,Cessna Aircraft Company,CITATION,S/II,,CITATION S/II,Light,,56,57,192,77,15,410,1970,1000,4.5
+597,Cessna Aircraft Company,CITATION,II/SP,,CITATION II/SP,Light,,56,57,188,77,15,375,1520,1000,4.5
+601,"Israel Aircraft Industries, Ltd.",WESTWIND,2,,WESTWIND 2,Midsize,,59,58,186,63,12,425,2750,2000,6
+608,"Embraer, SA",EMBRAER,LEGACY 650,,EMBRAER LEGACY 650,Heavy,,72,81,508,286,57,459,4123,5500,10
+607,"Embraer Executive Aircraft, Inc.",EMBRAER,PHENOM 300,,EMBRAER PHENOM 300,Light,,57,61,206,85,17,383,2019,1000,4.5
+677,"Canadair, Ltd.",CHALLENGER,601-3R,,CHALLENGER 601-3R,Heavy,10,73,98,340,115,23,476,3580,5500,10
+684,"Embraer, SA",EMBRAER,LEGACY 500,,EMBRAER LEGACY 500,Super Midsize,10,72,80,294,155,31,459,3167,3500,6.5
+609,"Embraer, SA",EMBRAER,PRAETOR 500,,EMBRAER PRAETOR 500,Midsize,9,72,80,246,150,30,426,3412,2000,6
+690,"Embraer Executive Aircraft, Inc.",EMBRAER,PHENOM 300E,,EMBRAER PHENOM 300E,Light,8,57,61,206,84,16,385,2033,1000,4.5
+692,"Embraer, SA",EMBRAER,PRAETOR 600,,EMBRAER PRAETOR 600,Super Midsize,9,72,80,289,155,31,433,4040,3500,6.5
+693,Gulfstream Aerospace Corporation,GULFSTREAM,G-IV (G400),,GULFSTREAM G-IV (G400),Ultra Long Range,16,74,87,541,169,33,476,4166,7500,15.4
+703,Dassault Aviation,FALCON,50-4,,FALCON 50-4,Super Midsize,9,68,73,281,115,23,458,3210,3500,6.5
+704,"Embraer, SA",EMBRAER,LEGACY 450,,EMBRAER LEGACY 450,Midsize,9,72,80,288,177,35,459,2919,2000,6
+705,British Aerospace,HAWKER,1000B,,HAWKER 1000B,Midsize,8,68,72,292,40,8,390,2500,2000,6
+25,Gulfstream Aerospace,Gulfstream,GIV,#NAME?,,Heavy,13,74,88,541,169,24,445,4847,5500,10
+67,Embraer,Legacy,650,,Legacy 650,Heavy,13,72,83,598,286,34,447,3919,5500,10
+492,Praetor,Praetor,500,,Praetor 500,Super Midsize,9,72,82,288,150,21,536,2904,3500,6.5
+480,Embraer,Praetor,600,,Praetor 600,Super Midsize,10,72,82,330,155,22,536,3598,3500,6.5
+97,Raytheon,Premier,1,A,Premier 1 A,Light,6,65,66,162,60,,451,1072,1000,4.5
+152,Raytheon,Premier,1,,Premier 1,Light,6,65,66,162,60,,426,1645,1000,4.5
