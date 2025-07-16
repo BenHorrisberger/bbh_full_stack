@@ -1,6 +1,6 @@
-def main():
-    print("Hello from app1!")
+from sharedlib.csv_reader import csv_reader
 
 
 if __name__ == "__main__":
-    main()
+    
+    pass
