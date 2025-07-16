@@ -2,7 +2,7 @@ import csv
 
 def csv_reader(path:str) -> list:
     
-    remove_data = ['\ufeffid', 'aircraft_make', 'aircraft_model', 'aircraft_variant', 'category_name', 'cabin_dimensions_height', 'cabin_dimensions_width', 'cabin_dimensions_length', 'baggage_capacity']
+    remove_data = ['cruise_speed', 'fuel_stop_hours', 'max_range', '\ufeffid', 'aircraft_make', 'aircraft_model', 'aircraft_variant', 'category_name', 'cabin_dimensions_height', 'cabin_dimensions_width', 'cabin_dimensions_length', 'baggage_capacity']
 
     with open(path, newline='') as csvfile:
 
@@ -15,6 +15,12 @@ def csv_reader(path:str) -> list:
             for data in remove_data:
 
                 aircraft.pop(data, None)
+
+            for key in aircraft.keys():
+
+                if aircraft[key] == "":
+
+                    aircraft[key] = 0
 
         return aircraft_list 
 
