@@ -1,6 +1,8 @@
 from invoke import task
 
 @task
-def mytask(c):
-    print("inside mytask()")
-    c.run ("ls -l")
+def list_viable(c, range, seats, bags):
+
+    print(range, seats, bags)
+
+    

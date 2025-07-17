@@ -4,15 +4,9 @@ requires-python = ">=3.13"
 
 [manifest]
 members = [
-    "app1",
     "bbh-full-stack",
     "sharedlib",
 ]
-
-[[package]]
-name = "app1"
-version = "0.1.0"
-source = { virtual = "app1" }
 
 [[package]]
 name = "bbh-full-stack"
