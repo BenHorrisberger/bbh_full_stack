@@ -12,4 +12,5 @@ dependencies = [
 members = [
     "app1",
     "sharedlib",
+    "apps/read_aircraft_data",
 ]
