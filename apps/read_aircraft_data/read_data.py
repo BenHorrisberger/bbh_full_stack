@@ -4,18 +4,18 @@ import sys
 
 class Aircraft:
 
-    def __init__(self, manufacturer:str, full_name:str, seats:int, bags:int, range:int, csv_entry:dict=None):
+    def __init__(self, manufacturer:str, full_aircraft_type:str, seats, bags, range, csv_entry:dict=None):
 
         self.manufacturer = manufacturer
-        self.full_name = full_name
-        self.seats = seats
-        self.bags = bags
-        self.range = range
+        self.full_aircraft_type = full_aircraft_type
+        self.seats = int(seats)
+        self.bags = int(bags)
+        self.range = int(range)
         self.csv_entry = csv_entry
 
     def __str__(self):
 
-        return f"{self.manufacturer}  {self.full_name}  {self.range}  {self.seats}  {self.seats}"
+        return f"{self.manufacturer}  {self.full_aircraft_type}  {self.range}  {self.seats}  {self.bags}"
     
     
 class AircraftList:
@@ -66,6 +66,14 @@ def read_aircraft_data(path:str):
             aircrafts = list(csv.DictReader(csvfile))
 
             for aircraft in aircrafts:
+
+
+                for key in aircraft.keys():
+                        
+                    if aircraft[key] == "":
+
+                        aircraft[key] = 0
+
 
                 new_entry = Aircraft(aircraft.get("manufacturer"), aircraft.get("full_aircraft_type"), aircraft.get("total_seats"), aircraft.get("num_bags"), aircraft.get("fuel_stop_distance"), aircraft)
 
