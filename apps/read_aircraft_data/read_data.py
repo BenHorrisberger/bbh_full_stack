@@ -4,11 +4,33 @@ import sys
 
 class Aircraft:
 
-    def __init__(self, manufacturer:str, full_aircraft_type:str, seats, bags, range, csv_entry:dict|None=None):
-        # seats, bags, etc - you want to be strings? or int or strings? Or force to ints only or strings only? All fine but use a type hint.
+    def __init__(self, manufacturer:str="Not specified", full_aircraft_type:str="Not specified", seats:int=0, bags:int=0, range:int=0, id:int=0, csv_entry:dict|None=None):
+        """
+        Represents a aircraft and holds relevant data to the aircraft
+
+        Attributes:
+            id (int)                 : If put into a AircraftList, id represents the index.
+            manufacturer (str)       : The name of the manufacturer
+            full_aircraft_type (str) : The aircraft_make, aircraft_model, aircraft_variant in one str
+            seats (int)              : The number of seats on the aircraft
+            bags (int)               : The number of bags the aircraft can hold
+            range (int)              : The range in miles until refueling is needed
+            csv_entry (dict)         : A dictionary containing the whole csv entry for the aircraft 
+
+        TODO
+        
         # Probably better to be ints, etc, and force your CLI to do the conversion.
+            - make conversion happen inside list_viable task?
 
         # Add a unique id = the index in the list. Just seems good to have.
+            - need to add this functionality to the AircraftList class
+
+        # Great that you did this! But a little ugly. How about using f-strings and consistent spacing?
+        (add some better printing to the __str__() method)
+        
+        """
+
+        self.id
         self.manufacturer = manufacturer
         self.full_aircraft_type = full_aircraft_type
         self.seats = int(seats)
@@ -16,37 +38,61 @@ class Aircraft:
         self.range = int(range)
         self.csv_entry = csv_entry
 
-    def __str__(self):
-        # Great that you did this! But a little ugly. How about using f-strings and consistent spacing?
+    def __str__(self)->None:
         return f"{self.manufacturer}  {self.full_aircraft_type}  {self.range}  {self.seats}  {self.bags}"
 
 
-class AircraftList: # Maybe rename "Aircrafts" with an S? Your choice - easy to miss the s, but still pretty common.
+class AircraftList:
+    """
+    Holds a list of Aircraft types
 
+    Attributes:
+        num_entries (int)        : The number of aircraft in the list
+        entries (list[Aircraft]) : A list of Aircraft types
+
+    Methods:
+        add_aircraft(aircraft:Aircraft): adds an Aircraft type to entries
+        __str__(): prints out entries one aircraft per line
+
+    TODO
+
+    # change this to be a derived property. Less effiicent, but this is a small list.
+    (change num_entries to be a derived property)
+
+    """
     def __init__(self):
 
-        self.num_entries = 0 # change this to be a derived property. Less effiicent, but this is a small list.
+        self.num_entries = 0 
         self.entries: list[Aircraft|None] = []
 
-    def add_aircraft(self, operand:Aircraft):
-        # operand? yuck. Call it "aircaft" of type Aircraft. And use F2 to have VSCODE refactor it
 
-        self.num_entries += 1
-        self.entries.append(operand)
+    def __str__(self)->None:
 
-    def __str__(self):
-
-        # num entries? Yuck! Number of Aircrafts: xxx
-        print(f"num_entries = {self.num_entries}")
+        print(f"Number of Aircrafts: {self.num_entries}")
         for entry in self.entries:
 
             print(entry)
 
-        return "" # don't need to return anything.
+    def add_aircraft(self, aircraft:Aircraft)->None:
+
+        self.num_entries += 1
+        self.entries.append(aircraft)
 
 
-def read_aircraft_data(path:str):
+
+def read_aircraft_data(path:str)->None:
+    """
+    Reads a csv file into the AircraftList.entries:List[Aircraft] structure.
+    checks to make sure the path exists and is a csv file.
+    
+    Args:
+        path (str) : path to the csv file, example "dir/file.csv"
+    
+    TODO
+
     # Some docs. What is the format you are expeecting? Show a line or two.
+    """
+
 
     if not os.path.isfile(path):
 
@@ -99,8 +145,6 @@ def read_aircraft_data(path:str):
 if __name__ == "__main__":
 
     # Great! Now add some pytests
-    #fail1 = read_aircraft_data("/home/lugnuts/dev/bbh_full_stack/aircraft_data/badfile.txt")
-    #fail2 = read_aircraft_data("/home/lugnuts/dev/bbh_full_stack/aircraft_data/notfound.txt")
 
     my_list = read_aircraft_data("/home/lugnuts/dev/bbh_full_stack/aircraft_data/test.csv")
 
