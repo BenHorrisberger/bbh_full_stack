@@ -1,6 +1,5 @@
 import csv
 import os
-import sys
 from tabulate import tabulate
 
 
@@ -95,19 +94,13 @@ def read_aircraft_data(path:str)->AircraftList:
         path (str) : path to the csv file, example "dir/file.csv"
     """
 
-    if not os.path.isfile(path):
+    if not os.path.exists(path):
 
-        print(f"\nArgument Error: file <{path}> not found")
-
-        sys.exit(1)
+        raise FileNotFoundError(f"File not found: <{path}>")
 
     if not path.lower().endswith(".csv"):
 
-        print()
-        print(f"Argument Error: expected .csv, got <{path}>")
-
-        sys.exit(1)
-
+        raise ValueError(f"Expected .csv file, got <{path}>")
 
     try:
 

@@ -28,6 +28,19 @@ def list_viable(c, distance="0", seats:int="0", bags:int="0", path:str="aircraft
     task_aircraft_list = read_aircraft_data(path)
     task_aircraft_list.quary(distance, seats, bags)
 
+@task
+def test(c):
+    """run tests on the read_data.py functionality"""
 
-# Add a "clean" task for ruff
-# Add a "test" task to run pytest
+    c.run("pytest")
+
+@task
+def check(c):
+
+    c.run("uv run ruff check")
+
+@task
+def clean(c):
+    """Remove cache files"""
+    c.run("find . -type d -name '__pycache__' -exec rm -r {} +", warn=True)
+    c.run("find . -type f -name '*.pyc' -delete", warn=True)
