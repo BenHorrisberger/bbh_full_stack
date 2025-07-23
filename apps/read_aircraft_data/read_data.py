@@ -1,6 +1,8 @@
 import csv
 import os
 import sys
+from tabulate import tabulate
+
 
 class Aircraft:
 
@@ -15,22 +17,19 @@ class Aircraft:
             seats (int)              : The number of seats on the aircraft
             bags (int)               : The number of bags the aircraft can hold
             range (int)              : The range in miles until refueling is needed
-            csv_entry (dict)         : A dictionary containing the whole csv entry for the aircraft 
+            csv_entry (dict)         : A dictionary containing the whole csv entry for the aircraft
+
+        Methods:
+            __str__(): print out the aircraft data in line
 
         TODO
-        
-        # Probably better to be ints, etc, and force your CLI to do the conversion.
-            - make conversion happen inside list_viable task?
-
-        # Add a unique id = the index in the list. Just seems good to have.
-            - need to add this functionality to the AircraftList class
 
         # Great that you did this! But a little ugly. How about using f-strings and consistent spacing?
         (add some better printing to the __str__() method)
         
         """
 
-        self.id
+        self.id = id
         self.manufacturer = manufacturer
         self.full_aircraft_type = full_aircraft_type
         self.seats = int(seats)
@@ -39,7 +38,8 @@ class Aircraft:
         self.csv_entry = csv_entry
 
     def __str__(self)->None:
-        return f"{self.manufacturer}  {self.full_aircraft_type}  {self.range}  {self.seats}  {self.bags}"
+
+        return f"{self.id} {self.manufacturer}  {self.full_aircraft_type}  {self.range}  {self.seats}  {self.bags}"
 
 
 class AircraftList:
@@ -51,59 +51,60 @@ class AircraftList:
         entries (list[Aircraft]) : A list of Aircraft types
 
     Methods:
-        add_aircraft(aircraft:Aircraft): adds an Aircraft type to entries
         __str__(): prints out entries one aircraft per line
-
-    TODO
-
-    # change this to be a derived property. Less effiicent, but this is a small list.
-    (change num_entries to be a derived property)
-
+        add_aircraft(aircraft:Aircraft): adds an Aircraft type to entries
+        quary(self, distance:int, seats:int, bags:int)->None: returns a tabulate table of aircraft that satisfy the arguments
     """
+
     def __init__(self):
 
-        self.num_entries = 0 
         self.entries: list[Aircraft|None] = []
 
 
-    def __str__(self)->None:
+    def __str__(self)->str:
 
-        print(f"Number of Aircrafts: {self.num_entries}")
+        print(f"Number of Aircrafts: {self.number_of_entries}")
         for entry in self.entries:
 
             print(entry)
 
+        return ""
+
+    @property
+    def number_of_entries(self)->int:
+
+        return len(self.entries)
+
     def add_aircraft(self, aircraft:Aircraft)->None:
 
-        self.num_entries += 1
         self.entries.append(aircraft)
 
+    def quary(self, distance:int, seats:int, bags:int)->None:
+
+        header_list = ["ID", "Manufacturer", "Full_aircraft_type", "Range in Miles", "Seats", "Bags"]
+        table = [[ac.id, ac.manufacturer, ac.full_aircraft_type, ac.range, ac.seats, ac.bags] for ac in self.entries if ac.range >= distance and ac.seats >= seats and ac.bags >= bags]
+        print(tabulate(table, headers=header_list, tablefmt="grid"))
 
 
-def read_aircraft_data(path:str)->None:
+def read_aircraft_data(path:str)->AircraftList:
     """
     Reads a csv file into the AircraftList.entries:List[Aircraft] structure.
     checks to make sure the path exists and is a csv file.
     
     Args:
         path (str) : path to the csv file, example "dir/file.csv"
-    
-    TODO
-
-    # Some docs. What is the format you are expeecting? Show a line or two.
     """
-
 
     if not os.path.isfile(path):
 
-        print(f"\nError: file <{path}> not found")
+        print(f"\nArgument Error: file <{path}> not found")
 
         sys.exit(1)
 
     if not path.lower().endswith(".csv"):
 
         print()
-        print(f"Error: expected .csv, got <{path}>")
+        print(f"Argument Error: expected .csv, got <{path}>")
 
         sys.exit(1)
 
@@ -115,37 +116,27 @@ def read_aircraft_data(path:str)->None:
         with open(path, newline='') as csvfile:
 
             aircrafts = list(csv.DictReader(csvfile))
+            aircraft_list_index = 0
 
             for aircraft in aircrafts:
 
-                # It's not obvious what this does. Makes sure empty values are 0? Explain.
-                # also, I bet instead of iteratring on keys, you can iterate on items() and get the value, so if value == ""
-                for key in aircraft.keys():
+                # if there is a "" as an value, this is becasuse the DictReader found an empty catagory in the csv
+                # need to replace them with 0's so we can run quary on the Aircraft and not compare an int with a str
+                aircraft = {key: (value if value != "" else 0) for key, value in aircraft.items()}
 
-                    if aircraft[key] == "":
-
-                        aircraft[key] = 0
-
-                # Do you see squiggly lines telling you the types are not consistent? it's a pain, but figure out how to make it clean. Typing makes your code more robust.
-                new_entry = Aircraft(aircraft.get("manufacturer"), aircraft.get("full_aircraft_type"), aircraft.get("total_seats"), aircraft.get("num_bags"), aircraft.get("fuel_stop_distance"), aircraft)
-
+                new_entry = Aircraft(aircraft.get("manufacturer"), aircraft.get("full_aircraft_type"), aircraft.get("total_seats"), aircraft.get("num_bags"), aircraft.get("fuel_stop_distance"), aircraft_list_index, aircraft)
                 aircraft_list.add_aircraft(new_entry)
+                aircraft_list_index += 1
 
             return aircraft_list
 
     except Exception as error:
-        # Very broad, which is frowned on, but I like. But is the only error "reading"? Shouldn't it be "error processing file <path>"?
-        # Also, maybe raise the error so python gives you a full dump.
 
-        print(f"Error reading <{path}>\n{error}")
-
-        sys.exit(1)
-
+        print(f"\nError processing <{path}> raising error message:\n")
+        raise error
 
 if __name__ == "__main__":
 
     # Great! Now add some pytests
-
     my_list = read_aircraft_data("/home/lugnuts/dev/bbh_full_stack/aircraft_data/test.csv")
-
     print(my_list)

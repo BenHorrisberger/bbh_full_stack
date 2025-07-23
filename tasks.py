@@ -1,8 +1,14 @@
 from invoke import task
-from tabulate import tabulate
+from invoke.exceptions import Exit
 
 from apps.read_aircraft_data.read_data import read_aircraft_data
 
+
+def check_input(name:str, input:str):
+    try:
+        return int(input)
+    except ValueError:
+        raise Exit(f"Argument Error: {name} must be entered as an int")
 
 @task(help={
     "path": "file path to the .csv, default=aircraft_data/Aircraft.csv",
@@ -11,19 +17,16 @@ from apps.read_aircraft_data.read_data import read_aircraft_data
     "bags": "the number of bags required, default=0"
 
 })
+def list_viable(c, distance="0", seats:int="0", bags:int="0", path:str="aircraft_data/Aircraft.csv"):
+    """List viable aircraft based on a distance, seats, bags requirements"""
 
+    distance = check_input("--distance",distance)
+    seats = check_input("--seats", seats)
+    bags = check_input("--bags", bags)
 
-def list_viable(c, path="aircraft_data/Aircraft.csv", distance=0, seats=0, bags=0):
-    # This filtering should be handled by AircraftList as a method. And you should to pytest to test many cases.
-    """List viable aircraft based on a range, seats, bags requirements"""
-
+    # pass off inputs to list_vaible methode of AircraftList
     task_aircraft_list = read_aircraft_data(path)
-
-    header_list = ["manufacturer", "full_aircraft_type", "range in miles", "seats", "bags"]
-    # Resolve all type warnings.
-    table = [[ac.manufacturer, ac.full_aircraft_type, ac.range, ac.seats, ac.bags] for ac in task_aircraft_list.entries if ac.range >= int(distance) and ac.seats >= int(seats) and ac.bags >= int(bags)]
-
-    print(tabulate(table, headers=header_list, tablefmt="grid")) # Good job on tabulate! Made me think you're a pro!
+    task_aircraft_list.quary(distance, seats, bags)
 
 
 # Add a "clean" task for ruff
