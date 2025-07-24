@@ -1,10 +1,8 @@
 # TODO
 
 ## Google API integration
-* Integrate google api.
-* add new functionality to  take -o --origin -d -destination first as city names
-    - the distance between o and d will be compaired to the range of aircraft to create a viable list
-
+* need to add error checking about IATA inputs (make better)
+* add pytests to get_distance functions
 
 ## Next Steps
 * add weather details through api

@@ -4,12 +4,11 @@ __pycache__/
 build/
 dist/
 wheels/
-*.egg-info
 
 # Virtual environments
 .venv
 # environments
 .env
 
-
-# GOOGLE MAPS API KEY AIzaSyAHDM_X9Ih1Oa66IxkQo0MGBgOzpFSW0UQ
+# ruff
+.ruff_cache

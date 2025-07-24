@@ -2,6 +2,7 @@ import csv
 import os
 from tabulate import tabulate
 
+from apps.trip_distance.get_distance import get_distance
 
 class Aircraft:
 
@@ -78,8 +79,11 @@ class AircraftList:
 
         self.entries.append(aircraft)
 
-    def quarry(self, distance:int, seats:int, bags:int)->None:
+    def quarry(self, origin:str, destination:str, seats:int, bags:int)->None:
 
+        distance = get_distance(origin, destination)
+
+        print(f"Trip distance : {distance}")
         header_list = ["ID", "Manufacturer", "Full_aircraft_type", "Range in Miles", "Seats", "Bags"]
         table = [[ac.id, ac.manufacturer, ac.full_aircraft_type, ac.range, ac.seats, ac.bags] for ac in self.entries if ac.range >= distance and ac.seats >= seats and ac.bags >= bags]
         print(tabulate(table, headers=header_list, tablefmt="grid"))

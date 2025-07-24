@@ -3,33 +3,33 @@ import os
 import requests
 import math
 
-def haversine(lat1:float, long1:float, lat2:float, long2:float)->float:
+def haversine(lat1:float, lng1:float, lat2:float, lng2:float)->float:
     """
     Calculate notical miles between two points
 
     Args:
         lat1 (float): Latitude of point 1 in degrees
-        long1 (float): Longitude of point 1 in degrees
+        lng1 (float): Longitude of point 1 in degrees
         lat2 (float): Latitude of point 2 in degrees
-        lon2 (float): Longitude of point 2 in degrees
+        lng2 (float): Longitude of point 2 in degrees
 
     Returns:
         float: distance in miles
     """
-    # radius of earth
-    r = 3959
+    # radius of earth in nm
+    r = 3440
 
     phi1 = math.radians(lat1)
     phi2 = math.radians(lat2)
 
     delta_phi = math.radians(lat2 - lat1)
-    delta_lamda = math.radians(long2 - long1)
+    delta_lamda = math.radians(lng2 - lng1)
 
-    result = (1 - math.cos(delta_phi) + math.cos(phi1) * math.cos(phi2) * (1 - math.cos(delta_lamda))) / 2
-    result = 2 * r * math.asin(math.sqrt(result))
+    term1 = math.sin(delta_phi / 2)**2 + math.cos(phi1) * math.cos(phi2) * math.sin(delta_lamda / 2)**2
+    miles = 2 * r * math.asin(math.sqrt(term1))
 
     #convert from mi to nm
-    return math.ceil(result / 1.1507794480235)
+    return math.ceil(miles)
 
 def get_coords(airport_name:str)->tuple[float, float]:
     """makes a call to the Google Geocode API
@@ -59,7 +59,17 @@ def get_coords(airport_name:str)->tuple[float, float]:
         return (coords["lat"], coords["lng"])
     else:
         print(f"GOOGLE API ERROR: {api_response_dict["status"]}")
-        return None
+        # not sure what kind of error handling to do
+        raise ValueError
+        
+    
+def get_distance(origin:str, destination:str)->float:
+
+    coords_o = get_coords(origin)
+    coords_d = get_coords(destination)
+
+    return haversine(coords_o[0], coords_o[1], coords_d[0], coords_d[1])
+
 
 if __name__ == "__main__":
     

@@ -4,29 +4,36 @@ from invoke.exceptions import Exit
 from apps.read_aircraft_data.read_data import read_aircraft_data
 
 
-def check_input(name:str, input:str):
+def check_input_int(flag:str, input:str):
     try:
         return int(input)
     except ValueError:
-        raise Exit(f"Argument Error: {name} must be entered as an int")
+        raise Exit(f"Argument Error: {flag} must be entered as an int")
+    
+def check_IATA(flag:str, input:str):
+    input_len = len(input)
+    if (input_len > 3 or input_len < 3):
+        raise Exit(f"Argument Error: {flag} must be a IATA code, Example: PWM")
 
 @task(help={
+    "origin": "IATA code of the trip origin",
+    "destination": "IATA code of the trip destination",
     "path": "file path to the .csv, default=aircraft_data/Aircraft.csv",
-    "distance": "the distance in miles required, default=0",
     "seats": "the number of seats required, default=0",
     "bags": "the number of bags required, default=0"
 
 })
-def list_viable(c, distance="0", seats:int="0", bags:int="0", path:str="aircraft_data/Aircraft.csv"):
+def list_viable(c, origin:str="", destination:str="", seats:int="0", bags:int="0", path:str="aircraft_data/Aircraft.csv"):
     """List viable aircraft based on a distance, seats, bags requirements"""
 
-    distance = check_input("--distance",distance)
-    seats = check_input("--seats", seats)
-    bags = check_input("--bags", bags)
+    check_IATA("--origin", origin)
+    check_IATA("--destination", destination)
+    seats = check_input_int("--seats", seats)
+    bags = check_input_int("--bags", bags)
 
-    # pass off inputs to list_vaible methode of AircraftList
     task_aircraft_list = read_aircraft_data(path)
-    task_aircraft_list.quary(distance, seats, bags)
+    task_aircraft_list.quarry(origin, destination, seats, bags)
+
 
 @task
 def test(c):

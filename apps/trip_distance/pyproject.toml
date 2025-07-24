@@ -1,5 +1,5 @@
 [project]
-name = "get-distance"
+name = "trip-distance"
 version = "0.1.0"
 description = "use google maps API to get distance between two cities"
 readme = "README.md"
