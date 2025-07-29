@@ -2,7 +2,7 @@ import csv
 import os
 from tabulate import tabulate
 
-from apps.trip_distance.get_distance import get_distance
+from apps.trip_distance.calculate_nm import get_notical_miles
 
 class Aircraft:
 
@@ -53,7 +53,7 @@ class AircraftList:
     Methods:
         __str__(): prints out entries one aircraft per line
         add_aircraft(aircraft:Aircraft): adds an Aircraft type to entries
-        quarry(self, distance:int, seats:int, bags:int)->None: returns a tabulate table of aircraft that satisfy the arguments
+        query(self, distance:int, seats:int, bags:int)->None: returns a tabulate table of aircraft that satisfy the arguments
     """
 
     def __init__(self):
@@ -79,11 +79,11 @@ class AircraftList:
 
         self.entries.append(aircraft)
 
-    def quarry(self, origin:str, destination:str, seats:int, bags:int)->None:
+    def query(self, origin:str, destination:str, seats:int, bags:int)->None:
 
-        distance = get_distance(origin, destination)
+        distance = get_notical_miles(origin, destination)
 
-        print(f"Trip distance : {distance}")
+        #print(f"Trip distance : {distance}")
         header_list = ["ID", "Manufacturer", "Full_aircraft_type", "Range in Miles", "Seats", "Bags"]
         table = [[ac.id, ac.manufacturer, ac.full_aircraft_type, ac.range, ac.seats, ac.bags] for ac in self.entries if ac.range >= distance and ac.seats >= seats and ac.bags >= bags]
         print(tabulate(table, headers=header_list, tablefmt="grid"))
@@ -118,7 +118,7 @@ def read_aircraft_data(path:str)->AircraftList:
             for aircraft in aircrafts:
 
                 # if there is a "" as an value, this is becasuse the DictReader found an empty catagory in the csv
-                # need to replace them with 0's so we can run quarry on the Aircraft and not compare an int with a str
+                # need to replace them with 0's so we can run query on the Aircraft and not compare an int with a str
                 aircraft = {key: (value if value != "" else 0) for key, value in aircraft.items()}
 
                 new_entry = Aircraft(aircraft.get("manufacturer"), aircraft.get("full_aircraft_type"), aircraft.get("total_seats"), aircraft.get("num_bags"), aircraft.get("fuel_stop_distance"), aircraft_list_index, aircraft)

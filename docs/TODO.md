@@ -5,5 +5,6 @@
 * add pytests to get_distance functions
 
 ## Next Steps
+* start RAG process
 * add weather details through api
 * Incorporate database.

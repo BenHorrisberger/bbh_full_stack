@@ -1,4 +1,5 @@
 from dotenv import load_dotenv
+import sys
 import os
 import requests
 import math
@@ -18,10 +19,8 @@ def haversine(lat1:float, lng1:float, lat2:float, lng2:float)->float:
     """
     # radius of earth in nm
     r = 3440
-
     phi1 = math.radians(lat1)
     phi2 = math.radians(lat2)
-
     delta_phi = math.radians(lat2 - lat1)
     delta_lamda = math.radians(lng2 - lng1)
 
@@ -58,12 +57,12 @@ def get_coords(airport_name:str)->tuple[float, float]:
         coords = api_response_dict["results"][0]["geometry"]["location"]
         return (coords["lat"], coords["lng"])
     else:
-        print(f"GOOGLE API ERROR: {api_response_dict["status"]}")
-        # not sure what kind of error handling to do
-        raise ValueError
+        #this will exit if there are no airports by the IATA code given
+        print(f"Google API Error: {api_response_dict["status"]} for airport name \"{airport_name}\"")
+        sys.exit(1)
         
     
-def get_distance(origin:str, destination:str)->float:
+def get_notical_miles(origin:str, destination:str)->float:
 
     coords_o = get_coords(origin)
     coords_d = get_coords(destination)
@@ -73,5 +72,4 @@ def get_distance(origin:str, destination:str)->float:
 
 if __name__ == "__main__":
     
-    coords = get_coords("PHI")
-    print(f"@ {coords}")
+    pass

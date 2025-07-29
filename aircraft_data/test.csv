@@ -1,6 +1,0 @@
-id,manufacturer,aircraft_make,aircraft_model,aircraft_variant,full_aircraft_type,category_name,total_seats,cabin_dimensions_height,cabin_dimensions_width,cabin_dimensions_length,baggage_capacity,num_bags,cruise_speed,max_range,fuel_stop_distance,fuel_stop_hours
-46,Bombardier,Learjet,31,A,Learjet 31 A,Light,7,52,60,154,40,6,515,1877,1000,4.5
-7,Beechcraft,Beechjet,400,,Beechjet 400,Light,7,58,59,173,53,8,465,1547,1000,4.5
-8,Beechcraft,Beechjet,400A,,Beechjet 400A,Light,7,57,58,187,53,8,465,1547,1000,4.5
-501,cessna,cessna,414,,cessna 414,Light,6,,,,,3,203,1528,1000,4.5
-490,Cessna,Cessna,Longitude,,Cessna Longitude,Super Midsize,12,72,77,302,112,16,550,3500,3500,6.5

@@ -12,3 +12,6 @@ wheels/
 
 # ruff
 .ruff_cache
+
+# testing directory
+test_data/

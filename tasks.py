@@ -12,7 +12,7 @@ def check_input_int(flag:str, input:str):
     
 def check_IATA(flag:str, input:str):
     input_len = len(input)
-    if (input_len > 3 or input_len < 3):
+    if (input_len > 3 or input_len < 3 or any(char.isdigit() for char in input)):
         raise Exit(f"Argument Error: {flag} must be a IATA code, Example: PWM")
 
 @task(help={
@@ -32,7 +32,7 @@ def list_viable(c, origin:str="", destination:str="", seats:int="0", bags:int="0
     bags = check_input_int("--bags", bags)
 
     task_aircraft_list = read_aircraft_data(path)
-    task_aircraft_list.quarry(origin, destination, seats, bags)
+    task_aircraft_list.query(origin, destination, seats, bags)
 
 
 @task
