@@ -48,6 +48,7 @@ def check(c):
 
 @task
 def clean(c):
+    #need to know what actually needs to be cleaned
     """Remove cache files"""
     c.run("find . -type d -name '__pycache__' -exec rm -r {} +", warn=True)
     c.run("find . -type f -name '*.pyc' -delete", warn=True)
